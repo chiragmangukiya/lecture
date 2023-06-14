@@ -20,12 +20,32 @@ const Tic = () => {
           setbtn(cnt);
           setval(!val);
 
-          win();
+          win(0,1,2,'x');
+          win(0,3,6,'x');
+          win(0,4,8,'x');
+          win(1,4,7,'x');
+          win(2,4,6,'x');
+          win(2,5,8,'x');
+          win(3,4,5,'x');
+          win(6,7,8,'x');
+
+          win(0,1,2,'o');
+          win(0,3,6,'o');
+          win(0,4,8,'o');
+          win(1,4,7,'o');
+          win(2,4,6,'o');
+          win(2,5,8,'o');
+          win(3,4,5,'o');
+          win(6,7,8,'o');
           
      }
-     const win = () => {
-          if(btn[0]=='x'&&btn[1]=='x'&&btn[2]=='x'){
-               alert("X Win");
+     const win = (p1,p2,p3,sign) => {
+          if(btn[p1]==sign&&btn[p2]==sign&&btn[p3]==sign){
+               if(sign == 'x'){
+                    alert("X Win");
+               }else{
+                    alert("O Win");
+               }
           }
      }
 

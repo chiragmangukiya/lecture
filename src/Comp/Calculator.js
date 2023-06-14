@@ -22,8 +22,7 @@ const Calculator = () => {
           }
      }     
      const back = () => {
-          seterase(no);
-          setno(erase.substr(0,erase.length-1));
+          setno(no.substr(0,no.length-1));
      }
      const ans = () => {
           if(sign == '+'){
