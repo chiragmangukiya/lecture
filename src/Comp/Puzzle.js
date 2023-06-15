@@ -24,8 +24,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b2 = () => {
-          
+     let b2 = () => {          
           if(btn1 == ''){
                setbtn1(btn2);
                setbtn2('');
@@ -40,8 +39,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b3 = () => {
-          
+     let b3 = () => {          
           if(btn2 == ''){
                setbtn2(btn3);
                setbtn3('');
@@ -52,8 +50,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b4 = () => {
-          
+     let b4 = () => {          
           if(btn1 == ''){
                setbtn1(btn4);
                setbtn4('');
@@ -68,8 +65,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b5 = () => {
-          
+     let b5 = () => {          
           if(btn2 == ''){
                setbtn2(btn5);
                setbtn5('');
@@ -88,8 +84,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b6 = () => {
-          
+     let b6 = () => {          
           if(btn3 == ''){
                setbtn3(btn6);
                setbtn6('');
@@ -104,8 +99,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b7 = () => {
-          
+     let b7 = () => {          
           if(btn4 == ''){
                setbtn4(btn7);
                setbtn7('');
@@ -116,8 +110,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b8 = () => {
-          
+     let b8 = () => {          
           if(btn7 == ''){
                setbtn7(btn8);
                setbtn8('');
@@ -132,8 +125,7 @@ const Puzzle = () => {
           }
           win();
      }
-     let b9 = () => {
-          
+     let b9 = () => {          
           if(btn6 == ''){
                setbtn6(btn9);
                setbtn9('');
