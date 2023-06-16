@@ -2,36 +2,31 @@ import { useState } from 'react'
 
 const Result = () => {
 
+     let initial={
+          rno:0,
+          sname:'',
+          s1:0,
+          s2:0,
+          s3:0,
+          s4:0,
+          s5:0,
+          total:0,
+          per:0
+     }
+
+     let [data,setdata]=useState(initial)
      let [detail,setdetail]=useState([]);
-     let [roll,setroll]=useState('');
-     let [name,setname]=useState('');
-     let [sub1,setsub1]=useState('');
-     let [sub2,setsub2]=useState('');
-     let [sub3,setsub3]=useState('');
-     let [sub4,setsub4]=useState('');
-     let [sub5,setsub5]=useState('');
-     let [total,settotal]=useState('');
-     let [per,setper]=useState('');
 
      let result = () => {
 
-          settotal(parseInt(sub1)+parseInt(sub2)+parseInt(sub3)+parseInt(sub4)+parseInt(sub5));
-          setper((total/5)+"%");
+          data.total=parseInt(data.s1)+parseInt(data.s2)+parseInt(data.s3)+parseInt(data.s4)+parseInt(data.s5);
+          data.per=(data.total/5)+"%";
           
-          setdetail([
-               ...detail,
-               { roll: roll,
-                 name: name,
-                 sub1: sub1,
-                 sub2: sub2,
-                 sub3: sub3,
-                 sub4: sub4,
-                 sub5: sub5, 
-                 total: total,                
-                 per: per                
-               }
-          ]);
+          setdetail(detail=>[...detail,data]);
           
+     }
+     let resultchange = (e) => {
+          setdata({...data,[e.target.name]:e.target.value})
      }
 
      
@@ -43,43 +38,43 @@ const Result = () => {
                          <tr>
                               <td>Roll No.</td>
                               <td>
-                                   <input type="text" name="" id="" onChange={(a) => setroll(a.target.value)} />
+                                   <input type="text" name="rno" value={data.rno} id="" onChange={resultchange} />
                               </td>
                          </tr>
                          <tr>
                               <td>Stu. Name</td>
                               <td>
-                                   <input type="text" name="" id="" onChange={(b) => setname(b.target.value)}/>
+                                   <input type="text" name="sname" value={data.sname} id="" onChange={resultchange}/>
                               </td>
                          </tr>
                          <tr>
                               <td>Sub 1</td>
                               <td>
-                                   <input type="text" name="" id="" onChange={(c) => setsub1(c.target.value)}/>
+                                   <input type="text" name="s1" value={data.s1} id="" onChange={resultchange}/>
                               </td>
                          </tr>
                          <tr>
                               <td>Sub 2</td>
                               <td>
-                                   <input type="text" name="" id="" onChange={(d) => setsub2(d.target.value)}/>
+                                   <input type="text" name="s2" value={data.s2} id="" onChange={resultchange}/>
                               </td>
                          </tr>
                          <tr>
                               <td>Sub 3</td>
                               <td>
-                                   <input type="text" name="" id="" onChange={(e) => setsub3(e.target.value)}/>
+                                   <input type="text" name="s3" value={data.s3} id="" onChange={resultchange}/>
                               </td>
                          </tr>
                          <tr>
                               <td>Sub 4</td>
                               <td>
-                                   <input type="text" name="" id="" onChange={(f) => setsub4(f.target.value)}/>
+                                   <input type="text" name="s4" value={data.s4} id="" onChange={resultchange}/>
                               </td>
                          </tr>
                          <tr>
                               <td>Sub 5</td>
                               <td>
-                                   <input type="text" name="" id="" onChange={(g) => setsub5(g.target.value)}/>
+                                   <input type="text" name="s5" value={data.s5} id="" onChange={resultchange}/>
                               </td>
                          </tr>
                          <tr>
@@ -107,17 +102,16 @@ const Result = () => {
                          </tr>
                     </thead>
                     <tbody>
-                    
                     {
-                         detail.map(item => (
+                         detail.map((item) => (
                               <tr>
-                                   <td>{item.roll}</td>
-                                   <td>{item.name}</td>
-                                   <td>{item.sub1}</td>
-                                   <td>{item.sub2}</td>
-                                   <td>{item.sub3}</td>
-                                   <td>{item.sub4}</td>
-                                   <td>{item.sub5}</td>
+                                   <td>{item.rno}</td>
+                                   <td>{item.sname}</td>
+                                   <td>{item.s1}</td>
+                                   <td>{item.s2}</td>
+                                   <td>{item.s3}</td>
+                                   <td>{item.s4}</td>
+                                   <td>{item.s5}</td>
                                    <td>{item.total}</td>
                                    <td>{item.per}</td>
                               </tr>
